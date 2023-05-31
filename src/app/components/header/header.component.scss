@@ -1,0 +1,78 @@
+.header {
+    width: 100%;
+    height: 40vh;
+    background-image: linear-gradient(to left bottom, rgb(148 237 249 / 45%), rgb(253 83 83 / 74%)), url(../../../assets/cocktails.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    
+    &__finder {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 40%;
+
+        &--search {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 75%;
+            font-size: 22px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        &--find {
+            margin: 0 5px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 22px;
+            padding: 10px 17px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 3px 2px 10px #3e3e3e;
+            cursor: pointer;
+
+            &:hover {
+
+            }
+        }
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+.card {
+    width: 480px;
+    border: 1px solid #dddd;
+    margin: 20px;
+    box-shadow: 2px 3px 10px #dddd;
+    border-radius: 25px;
+    padding: 16px;
+    padding-bottom: 20px;
+
+    &__image {
+        & img {
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 25px 25px 0px 0px;
+        }
+    }
+
+    &__data {
+        padding: 10px;
+
+        & .property {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        & .value {
+            font-size: 24px;
+        }
+    }
+}
