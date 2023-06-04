@@ -1,43 +1,34 @@
 <header class="header">
     <div class="header__finder">
-        <input class="header__finder--search" type="text" placeholder="Name of the cocktail" [(ngModel)]="inputSearch">
+        <input class="header__finder--search" (keyup)="findCocktail(inputSearch)" type="text" placeholder="Name of the cocktail" [(ngModel)]="inputSearch">
         <button class="header__finder--find" (click)="findCocktail(inputSearch)">Buscar</button>
     </div>
 </header>
 
 <!-- Cards -->
 <div class="cards" *ngIf="findItCocktails">
-    <div class="card" *ngFor="let cocktail of findItCocktails">
+    <div class="card" *ngFor="let drink of findItCocktails; let i = index">
         <div class="card__image">
-            <img [src]="cocktail.strDrinkThumb" alt="" srcset="">
+            <img [src]="drink.strDrinkThumb" alt="Drink Image" class="card__image">
         </div>
-        <!-- <div class="card__data">
-            <table>
-                <tr>
-                    <td class="property">{{cocktail.nombre}} ({{cocktail.peso_promedio}} kg)</td>
-                </tr>
-                <tr *ngIf="cocktail.numero_patas > 0">
-                    <td>
-                        <span class="value">
-                            Tiene {{cocktail.numero_patas}} 
-                            {{(cocktail.numero_patas > 1) ? "patas" : "pata"}}
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td><span class="value">Su color predominante es el {{cocktail.color_predominante}}</span></td>
-                </tr>
-                <tr>
-                    <td><span class="value"><span class="property">Su alimentación</span>: {{cocktail.alimentacion}}</span></td>
-                </tr>
-                <tr>
-                    <td><span class="value"><span class="property">Su habitat</span>: {{cocktail.habitat}}</span></td>
-                </tr>
+        <div class="card__content">
+            <h3 class="card__title">{{ drink.strDrink }}</h3>
+            <p class="card__category">Category: {{ drink.strCategory }}</p>
+            <p class="card__alcoholic">{{ drink.strAlcoholic }}</p>
+            <p class="card__instructions">{{ drink.strInstructions }}</p>
 
-                <tr>
-                    <td class="value" *ngIf="cocktail.volador">Volador</td>
-                </tr>
-            </table>
-        </div> -->
+            <button class="card__button" (click)="toggleIngredients(drink.idDrink, i)">View Ingredients</button>
+            
+            <section class="card__ingredients" *ngIf="drink.showIngredients">
+                <h4 class="card__subtitle">Ingredients:</h4>
+                <ul class="card__ingredient-list" *ngIf="drink.ingredients">
+                    <li *ngFor="let ingr of drink.ingredients">
+                            <p>{{ingr}}</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
     </div>
 </div>
+
+

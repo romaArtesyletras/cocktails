@@ -1,4 +1,5 @@
 export interface Drink {
+    idDrink: string
     dateModified?: any
     strAlcoholic?: any
     strCategory?: any
@@ -48,4 +49,6 @@ export interface Drink {
     strMeasure15?: any
     strTags?: any
     strVideo?: any
+    ingredients?: any
+    showIngredients: boolean
 }

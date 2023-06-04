@@ -12,6 +12,8 @@ export class HeaderComponent {
   inputSearch!: string
 
   findItCocktails!: Drink[]
+
+  showIngredients!: boolean;
   
   constructor(
     private cocktailService: CocktailService
@@ -27,5 +29,30 @@ export class HeaderComponent {
         console.log(err)
       }
     })
+  }
+
+  async toggleIngredients(idDrink:string, index: number) {
+    await this.getIngredients()
+    this.findItCocktails[index].showIngredients = !this.findItCocktails[index].showIngredients;
+
+    // console.log("findItCocktails > ",this.findItCocktails);
+  }
+
+  async getIngredients() {
+    var ingredientsSeparated = this.findItCocktails.map((c:any) => {
+      let ingredients:any = [];
+      
+      for (let e = 0; e < 15; e++) {
+        const ingredientIndex = e + 1;
+        if((c['strMeasure' + ingredientIndex]) && c['strIngredient' + ingredientIndex]) {
+          ingredients.push(c['strMeasure' + ingredientIndex] + 'of ' + c['strIngredient' + ingredientIndex]);
+        }
+      }
+      c.ingredients = ingredients
+
+      return ingredients;
+    })
+    
+    return ingredientsSeparated
   }
 }

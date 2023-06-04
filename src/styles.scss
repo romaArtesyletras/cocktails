@@ -1,4 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+/* Import the font files */
+@font-face {
+    font-family: 'Exo2-ExtraLight';
+    src: url('./assets/fonts/Exo_2/static/Exo2-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-Light';
+    src: url('./assets/fonts/Exo_2/static/Exo2-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-Regular';
+    src: url('./assets/fonts/Exo_2/static/Exo2-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+font-family: 'Exo2-Medium';
+src: url('./assets/fonts/Exo_2/static/Exo2-Medium.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-SemiBold';
+    src: url('./assets/fonts/Exo_2/static/Exo2-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-Bold';
+    src: url('./assets/fonts/Exo_2/static/Exo2-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-ExtraBold';
+    src: url('./assets/fonts/Exo_2/static/Exo2-ExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-Black';
+    src: url('./assets/fonts/Exo_2/static/Exo2-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exo2-ThinItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-ThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-ExtraLightItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-ExtraLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-LightItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-Italic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-MediumItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-MediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-SemiBoldItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-SemiBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-BoldItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-ExtraBoldItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Exo2-BlackItalic';
+    src: url('./assets/fonts/Exo_2/static/Exo2-BlackItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 body {
     margin: 0;
 }
+
+p {
+    font-family: 'Exo2-Regular', sans-serif;
+}
+
+span {
+    font-family: 'Exo2-Regular', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Exo2-Bold', sans-serif;
+}
+
+button {
+    font-family: 'Exo2-SemiBold', sans-serif;
+}
+
+a {
+    font-family: 'Exo2-SemiBold', sans-serif;
+    /* or */
+    font-family: 'Exo2-Bold', sans-serif;
+}
+
+button {
+    font-family: 'Exo2-SemiBold', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #4285f4;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3367d6;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5);
+}
+
