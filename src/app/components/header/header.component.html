@@ -22,6 +22,7 @@
             
             <section class="card__ingredients" *ngIf="drink.showIngredients">
                 <h4 class="card__subtitle">Ingredients:</h4>
+                
                 <ul class="card__ingredient-list" *ngIf="drink.ingredients">
                     <li *ngFor="let ingr of drink.ingredients">
                         <p>{{ingr}}</p>

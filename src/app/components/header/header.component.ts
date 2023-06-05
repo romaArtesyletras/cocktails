@@ -24,9 +24,7 @@ export class HeaderComponent {
       this.cocktailService.getCocktailsName(name).subscribe({
         next: (res: any) => {
           this.findItCocktails = res.drinks
-          this.findItCocktails.map((c) => {
-              c.animatedClass = 'bounce-in-top';
-          })
+          this.getIngredients()
           console.log(this.findItCocktails)
         },
         error: (err: any) => {
@@ -39,14 +37,12 @@ export class HeaderComponent {
   }
 
   async toggleIngredients(idDrink:string, index: number) {
-    await this.getIngredients()
     this.findItCocktails[index].showIngredients = !this.findItCocktails[index].showIngredients;
-
     // console.log("findItCocktails > ",this.findItCocktails);
   }
 
   async getIngredients() {
-    var ingredientsSeparated = this.findItCocktails.map((c:any) => {
+    this.findItCocktails.map((c:any) => {
       let ingredients:any = [];
       
       for (let e = 0; e < 15; e++) {
@@ -56,11 +52,9 @@ export class HeaderComponent {
           ingredients.push(c['strMeasure' + ingredientIndex] + ' - ' + c['strIngredient' + ingredientIndex]);
         }
       }
+      
       c.ingredients = ingredients
-
-      return ingredients;
+      c.animatedClass = 'bounce-in-top';
     })
-    
-    return ingredientsSeparated
   }
 }
