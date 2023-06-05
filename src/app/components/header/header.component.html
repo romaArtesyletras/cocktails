@@ -1,6 +1,7 @@
+<!-- Search -->
 <header class="header">
     <div class="header__finder">
-        <input class="header__finder--search" (keyup)="findCocktail(inputSearch, $event)" type="text" placeholder="Name of the cocktail" [(ngModel)]="inputSearch">
+        <input class="header__finder--search" (keyup)="findCocktail(inputSearch, $event)" type="text" placeholder="Nombre del cocktail" [(ngModel)]="inputSearch">
         <button class="header__finder--find" (click)="findCocktail(inputSearch, $event)">Buscar</button>
     </div>
 </header>
@@ -23,7 +24,7 @@
                 <h4 class="card__subtitle">Ingredients:</h4>
                 <ul class="card__ingredient-list" *ngIf="drink.ingredients">
                     <li *ngFor="let ingr of drink.ingredients">
-                            <p>{{ingr}}</p>
+                        <p>{{ingr}}</p>
                     </li>
                 </ul>
             </section>

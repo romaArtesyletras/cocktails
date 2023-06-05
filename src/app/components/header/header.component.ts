@@ -51,8 +51,9 @@ export class HeaderComponent {
       
       for (let e = 0; e < 15; e++) {
         const ingredientIndex = e + 1;
+        // strMeasure1  strIngredient1
         if((c['strMeasure' + ingredientIndex]) && c['strIngredient' + ingredientIndex]) {
-          ingredients.push(c['strMeasure' + ingredientIndex] + 'of ' + c['strIngredient' + ingredientIndex]);
+          ingredients.push(c['strMeasure' + ingredientIndex] + ' - ' + c['strIngredient' + ingredientIndex]);
         }
       }
       c.ingredients = ingredients
