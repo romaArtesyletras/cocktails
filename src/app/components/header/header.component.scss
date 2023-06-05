@@ -1,7 +1,8 @@
 .header {
     width: 100%;
     height: 40vh;
-    background-image: linear-gradient(to left bottom, rgb(148 237 249 / 45%), rgb(253 83 83 / 74%)), url(../../../assets/cocktails.jpg);
+    // Photo by Life Of Pix: https://www.pexels.com/photo/grayscale-photography-of-margarita-glass-on-table-4295/
+    background-image: linear-gradient(to left bottom, rgb(148 237 249 / 45%), rgb(253 83 83 / 74%)), url(../../../assets/images/cocktails2.jpg);
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -40,43 +41,6 @@
     }
 }
 
-// .cards {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//     align-items: stretch;
-// }
-// .card {
-//     width: 480px;
-//     border: 1px solid #dddd;
-//     margin: 20px;
-//     box-shadow: 2px 3px 10px #dddd;
-//     border-radius: 25px;
-//     padding: 16px;
-//     padding-bottom: 20px;
-
-//     &__image {
-//         & img {
-//             width: 100%;
-//             margin: 0 auto;
-//             border-radius: 25px 25px 0px 0px;
-//         }
-//     }
-
-//     &__data {
-//         padding: 10px;
-
-//         & .property {
-//             font-size: 22px;
-//             font-weight: bold;
-//         }
-
-//         & .value {
-//             font-size: 24px;
-//         }
-//     }
-// }
-
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -86,6 +50,7 @@
 
 .card {
     width: 480px;
+    height: auto;
     border: 1px solid #dddd;
     margin: 20px;
     box-shadow: 2px 3px 10px #dddd;
@@ -118,4 +83,27 @@
             font-size: 24px;
         }
     }
+}
+
+.text-info {
+    font-size: 26px;
+    text-align: center;
+    margin: 80px 0px;
+}
+
+
+.bounce-in-top {
+    animation: bounce-in-top 1s ease-in-out;
+}
+@keyframes bounce-in-top {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    80% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
 }

@@ -1,13 +1,13 @@
 <header class="header">
     <div class="header__finder">
-        <input class="header__finder--search" (keyup)="findCocktail(inputSearch)" type="text" placeholder="Name of the cocktail" [(ngModel)]="inputSearch">
-        <button class="header__finder--find" (click)="findCocktail(inputSearch)">Buscar</button>
+        <input class="header__finder--search" (keyup)="findCocktail(inputSearch, $event)" type="text" placeholder="Name of the cocktail" [(ngModel)]="inputSearch">
+        <button class="header__finder--find" (click)="findCocktail(inputSearch, $event)">Buscar</button>
     </div>
 </header>
 
 <!-- Cards -->
 <div class="cards" *ngIf="findItCocktails">
-    <div class="card" *ngFor="let drink of findItCocktails; let i = index">
+    <div class="card {{drink.animatedClass}}" *ngFor="let drink of findItCocktails; let i = index">
         <div class="card__image">
             <img [src]="drink.strDrinkThumb" alt="Drink Image" class="card__image">
         </div>
@@ -17,7 +17,7 @@
             <p class="card__alcoholic">{{ drink.strAlcoholic }}</p>
             <p class="card__instructions">{{ drink.strInstructions }}</p>
 
-            <button class="card__button" (click)="toggleIngredients(drink.idDrink, i)">View Ingredients</button>
+            <button class="card__button" (click)="toggleIngredients(drink.idDrink, i)">{{drink.showIngredients ? 'Close' : 'Show'}} Ingredients</button>
             
             <section class="card__ingredients" *ngIf="drink.showIngredients">
                 <h4 class="card__subtitle">Ingredients:</h4>
@@ -29,6 +29,12 @@
             </section>
         </div>
     </div>
+</div>
+
+<div *ngIf="!findItCocktails">
+    <p class="text-info">
+        Busca el cocktail que más te guste y encuentra sus ingredientes ;)
+    </p>
 </div>
 
 

@@ -51,4 +51,5 @@ export interface Drink {
     strVideo?: any
     ingredients?: any
     showIngredients: boolean
+    animatedClass?: string
 }

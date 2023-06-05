@@ -19,16 +19,23 @@ export class HeaderComponent {
     private cocktailService: CocktailService
   ){}
 
-  findCocktail(name: string){
-    this.cocktailService.getCocktailsName(name).subscribe({
-      next: (res: any) => {
-        this.findItCocktails = res.drinks
-        console.log(this.findItCocktails)
-      },
-      error: (err: any) => {
-        console.log(err)
-      }
-    })
+  findCocktail(name: string, e:any){
+    if (/^Key[A-Z]$/.test(e.code)) { // just letters
+      this.cocktailService.getCocktailsName(name).subscribe({
+        next: (res: any) => {
+          this.findItCocktails = res.drinks
+          this.findItCocktails.map((c) => {
+              c.animatedClass = 'bounce-in-top';
+          })
+          console.log(this.findItCocktails)
+        },
+        error: (err: any) => {
+          console.log(err)
+        }
+      })
+    } else if (name == "") {
+      this.findItCocktails = []
+    }
   }
 
   async toggleIngredients(idDrink:string, index: number) {
